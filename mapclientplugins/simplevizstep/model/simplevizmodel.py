@@ -50,14 +50,12 @@ class SimpleVizModel(object):
         # set current directory to path from file, to support scripts and fieldml with external resources
         path = os.path.dirname(inputScriptFileName)
         os.chdir(path)
-        try:
-            f = open(inputScriptFileName, 'r')
-            myfunctions = {}
-            exec f in myfunctions
-            success = myfunctions['loadModel'](self._rootRegion)
-        except:
-            success = False
-        return success
+        f = open(inputScriptFileName, 'r')
+        myfunctions = {}
+        exec f in myfunctions
+        success = myfunctions['loadModel'](self._rootRegion)
+        if not success:
+            raise ValueError('Could not load ' + inputScriptFileName)
 
 # ----- Graphics Settings -----
 

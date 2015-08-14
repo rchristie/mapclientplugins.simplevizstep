@@ -56,15 +56,7 @@ class simplevizStep(WorkflowStepMountPoint):
             pass
         self._view.initialise()
         if self._inputScriptFileName is not None:
-            success = self._view.loadScript(self._inputScriptFileName.encode('ASCII'))
-            if not success:
-                msgBox = QtGui.QMessageBox()
-                msgBox.setWindowTitle("SimpleViz")
-                msgBox.setText("Error reading file: " + self._inputScriptFileName)
-                msgBox.setStandardButtons(QtGui.QMessageBox.Ok)
-                msgBox.setDefaultButton(QtGui.QMessageBox.Ok)
-                msgBox.exec_()
-                self._doneExecution()
+            self._view.loadScript(self._inputScriptFileName.encode('ASCII'))
         self._setCurrentWidget(self._view)
 
     def setPortData(self, index, dataIn):
