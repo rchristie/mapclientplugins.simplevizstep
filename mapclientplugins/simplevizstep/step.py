@@ -49,13 +49,11 @@ class simplevizStep(WorkflowStepMountPoint):
         # Put your execute step code here before calling the '_doneExecution' method.
         if self._view is None:
             simpleVizModel = SimpleVizModel()
+            simpleVizModel.setLocation(os.path.join(self._location, self._config['identifier']))
             self._view = SimpleVizWidget(simpleVizModel)
             self._view.registerDoneExecution(self._doneExecution)
         else:
-            simpleVizModel = self._view.getModel()
-        # GRC check this needs to be re-executed
-        print 'GRC location = ', self._location
-        simpleVizModel.setLocation(os.path.join(self._location, self._config['identifier']))
+            pass
         self._view.initialise()
         if self._inputScriptFileName is not None:
             success = self._view.loadScript(self._inputScriptFileName.encode('ASCII'))
