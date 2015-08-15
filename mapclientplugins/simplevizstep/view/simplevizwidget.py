@@ -53,9 +53,7 @@ class SimpleVizWidget(QtGui.QWidget):
         '''
         Clear the model and view, reset display of widgets
         '''
-        self._scene = None
         self._model.initialise()
-        self._scene = self._model.getRootRegion().getScene()
         self._graphicsInitialized()
         self._ui.dockWidget.setFloating(False)
         self._ui.toolBox.setCurrentIndex(0)

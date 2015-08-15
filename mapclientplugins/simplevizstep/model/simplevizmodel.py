@@ -19,19 +19,19 @@ class SimpleVizModel(object):
         '''
         Constructor
         '''
+        self._location = None
+        self.initialise()
+
+    def initialise(self):
+        '''
+        Ensure scene or other objects from old context are not in use before calling
+        '''
         self._context = Context("SimpleViz")
         # set up standard materials and glyphs so we can use them elsewhere
         materialmodule = self._context.getMaterialmodule()
         materialmodule.defineStandardMaterials()
         glyphmodule = self._context.getGlyphmodule()
         glyphmodule.defineStandardGlyphs()
-        self._location = None
-        self.initialise()
-
-    def initialise(self):
-        '''
-        Ensure scene for this region is not in use before calling!
-        '''
         self._rootRegion = self._context.createRegion()
 
     def getContext(self):
