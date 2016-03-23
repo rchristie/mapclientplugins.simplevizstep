@@ -379,10 +379,10 @@ class SimpleVizWidget(QtGui.QWidget):
         nearPlane = sv.getNearClippingPlane()
         farPlane = sv.getFarClippingPlane()
         result, eyePos, lookat, upVector = sv.getLookatParameters()
-        obj = { "nearPlane": nearPlane, "farPlane": farPlane, "eyePosition": eyePos, "targetPosition": lookat, "upVector": upVector, "numberOfResources": numberOfResources, "timeEnabled" : time_enabled}
+        obj = { "nearPlane": nearPlane, "farPlane": farPlane, "eyePosition": eyePos, "targetPosition": lookat, "upVector": upVector, "numberOfResources": numberOfResources, "timeEnabled" : [time_enabled]}
         outputName = outputPrefix + "_view.json"
-        export_f = open(outputName, "wb+")
-        export_f.write(str(json.dumps(obj)))
+        export_f = open(outputName, "w+")
+        export_f.write(json.dumps(obj))
         export_f.close()
 
     def exportScene(self, outputPrefix):
@@ -405,7 +405,7 @@ class SimpleVizWidget(QtGui.QWidget):
             outputName = outputPrefix + "_" + str(i + 1) + ".json"
             srs.append(si.createStreamresourceFile(outputName))
             i = i + 1
-        scene.exportScene(si)
+        scene.write(si)
         return number
 
     def _saveWebGLClicked(self):
@@ -416,5 +416,5 @@ class SimpleVizWidget(QtGui.QWidget):
         fileName = fileNameTuple[0]
         if not fileName:
             return
-        numberOfResources = self.exportScene(str(fileName))
-        self.exportSceneViewersettings(str(fileName), numberOfResources)
+        numberOfResources = self.exportScene(fileName)
+        self.exportSceneViewersettings(fileName, numberOfResources)
