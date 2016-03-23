@@ -4,7 +4,8 @@ Created on Aug 12, 2015
 @author: Richard Christie
 '''
 
-import os
+import os, sys
+
 from opencmiss.zinc.context import Context
 from opencmiss.zinc.scenecoordinatesystem import SCENECOORDINATESYSTEM_NORMALISED_WINDOW_FIT_LEFT
 from opencmiss.zinc.status import OK as ZINC_OK
@@ -50,10 +51,15 @@ class SimpleVizModel(object):
         # set current directory to path from file, to support scripts and fieldml with external resources
         path = os.path.dirname(inputScriptFileName)
         os.chdir(path)
-        f = open(inputScriptFileName, 'r')
-        myfunctions = {}
-        exec f in myfunctions
-        success = myfunctions['loadModel'](self._rootRegion)
+        sys.path.append(path)
+        _, filename = os.path.split(inputScriptFileName)
+        mod_name, _ = os.path.splitext(filename)
+        import importlib.util
+        spec = importlib.util.spec_from_file_location(mod_name, inputScriptFileName)
+        foo = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(foo)
+
+        success = foo.loadModel(self._rootRegion)
         if not success:
             raise ValueError('Could not load ' + inputScriptFileName)
 

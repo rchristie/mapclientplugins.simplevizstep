@@ -88,7 +88,7 @@ class SimpleVizWidget(QtGui.QWidget):
         '''
         Display real value in a widget
         '''
-        newText = unicode('{:.5g}'.format(value))
+        newText = '{:.5g}'.format(value)
         widget.setText(newText)
 
     def _displayScaleInteger(self, widget, values, numberFormat = '{:d}'):
