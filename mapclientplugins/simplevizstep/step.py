@@ -9,7 +9,7 @@ MAP Client Plugin Step
 import os
 import json
 
-from PySide import QtGui
+from PySide2 import QtGui
 
 from mapclient.mountpoints.workflowstep import WorkflowStepMountPoint
 from mapclientplugins.simplevizstep.configuredialog import ConfigureDialog

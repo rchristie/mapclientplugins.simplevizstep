@@ -3,12 +3,12 @@ Created on Aug 12, 2015
 
 @author: Richard Christie
 '''
-from PySide import QtGui, QtCore
+from PySide2 import QtWidgets, QtCore
 
 import json
 from mapclientplugins.simplevizstep.view.ui_simplevizwidget import Ui_SimpleVizWidget
 
-class SimpleVizWidget(QtGui.QWidget):
+class SimpleVizWidget(QtWidgets.QWidget):
     '''
     classdocs
     '''
@@ -236,15 +236,15 @@ class SimpleVizWidget(QtGui.QWidget):
             return True
         # block signals otherwise editingFinished() is triggered
         widget.blockSignals(True)
-        msgBox = QtGui.QMessageBox()
+        msgBox = QtWidgets.QMessageBox()
         msgBox.setWindowTitle("SimpleViz")
         msgBox.setText("Warning! Fine tessellation divisions can take a long time to apply.")
         msgBox.setInformativeText("Please confirm action.")
-        msgBox.setStandardButtons(QtGui.QMessageBox.Apply | QtGui.QMessageBox.Cancel)
-        msgBox.setDefaultButton(QtGui.QMessageBox.Cancel)
+        msgBox.setStandardButtons(QtWidgets.QMessageBox.Apply | QtWidgets.QMessageBox.Cancel)
+        msgBox.setDefaultButton(QtWidgets.QMessageBox.Cancel)
         result = msgBox.exec_()
         widget.blockSignals(False)
-        return result == QtGui.QMessageBox.Apply
+        return result == QtWidgets.QMessageBox.Apply
 
     def _tessellationMinimumDivisionsDisplay(self):
         self._displayScaleInteger(self._ui.tessellation_minimum_divisions_lineedit,
@@ -355,7 +355,7 @@ class SimpleVizWidget(QtGui.QWidget):
         '''
         Save the view in the window to an image file.
         '''
-        fileNameTuple = QtGui.QFileDialog.getSaveFileName(self, "Save image", "", "Image files (*.jpg *.png *.tif *.*)")
+        fileNameTuple = QtWidgets.QFileDialog.getSaveFileName(self, "Save image", "", "Image files (*.jpg *.png *.tif *.*)")
         fileName = fileNameTuple[0]
         if not fileName:
             return
@@ -412,7 +412,7 @@ class SimpleVizWidget(QtGui.QWidget):
         '''
         Save the view in the window to WebGL content.
         '''
-        fileNameTuple = QtGui.QFileDialog.getSaveFileName(self, "Specify prefix", "")
+        fileNameTuple = QtWidgets.QFileDialog.getSaveFileName(self, "Specify prefix", "")
         fileName = fileNameTuple[0]
         if not fileName:
             return

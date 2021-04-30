@@ -1,78 +1,76 @@
 # -*- coding: utf-8 -*-
 
-# Form implementation generated from reading ui file '../qt/simplevizwidget.ui'
-#
-# Created: Thu Aug 13 15:52:11 2015
-#      by: pyside-uic 0.2.15 running on PySide 1.2.1
-#
-# WARNING! All changes made in this file will be lost!
+################################################################################
+## Form generated from reading UI file 'simplevizwidget.ui'
+##
+## Created by: Qt User Interface Compiler version 5.15.2
+##
+## WARNING! All changes made in this file will be lost when recompiling UI file!
+################################################################################
 
-from PySide import QtCore, QtGui
+from PySide2.QtCore import *
+from PySide2.QtGui import *
+from PySide2.QtWidgets import *
+
+from opencmiss.zincwidgets.sceneeditorwidget import SceneEditorWidget
+from opencmiss.zincwidgets.regionchooserwidget import RegionChooserWidget
+from opencmiss.zincwidgets.sceneviewereditorwidget import SceneviewerEditorWidget
+from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
+
 
 class Ui_SimpleVizWidget(object):
     def setupUi(self, SimpleVizWidget):
-        SimpleVizWidget.setObjectName("SimpleVizWidget")
+        if not SimpleVizWidget.objectName():
+            SimpleVizWidget.setObjectName(u"SimpleVizWidget")
         SimpleVizWidget.resize(580, 616)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
+        sizePolicy = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Preferred)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(SimpleVizWidget.sizePolicy().hasHeightForWidth())
         SimpleVizWidget.setSizePolicy(sizePolicy)
-        self.horizontalLayout = QtGui.QHBoxLayout(SimpleVizWidget)
+        self.horizontalLayout = QHBoxLayout(SimpleVizWidget)
         self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setContentsMargins(0, 0, 0, 0)
-        self.horizontalLayout.setObjectName("horizontalLayout")
-        self.dockWidget = QtGui.QDockWidget(SimpleVizWidget)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.dockWidget.sizePolicy().hasHeightForWidth())
-        self.dockWidget.setSizePolicy(sizePolicy)
-        self.dockWidget.setMinimumSize(QtCore.QSize(230, 178))
-        self.dockWidget.setFeatures(QtGui.QDockWidget.DockWidgetFloatable|QtGui.QDockWidget.DockWidgetMovable)
-        self.dockWidget.setAllowedAreas(QtCore.Qt.AllDockWidgetAreas)
-        self.dockWidget.setObjectName("dockWidget")
-        self.dockWidgetContents = QtGui.QWidget()
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.dockWidgetContents.sizePolicy().hasHeightForWidth())
-        self.dockWidgetContents.setSizePolicy(sizePolicy)
-        self.dockWidgetContents.setObjectName("dockWidgetContents")
-        self.verticalLayout = QtGui.QVBoxLayout(self.dockWidgetContents)
+        self.horizontalLayout.setObjectName(u"horizontalLayout")
+        self.dockWidget = QDockWidget(SimpleVizWidget)
+        self.dockWidget.setObjectName(u"dockWidget")
+        sizePolicy1 = QSizePolicy(QSizePolicy.Preferred, QSizePolicy.Expanding)
+        sizePolicy1.setHorizontalStretch(0)
+        sizePolicy1.setVerticalStretch(0)
+        sizePolicy1.setHeightForWidth(self.dockWidget.sizePolicy().hasHeightForWidth())
+        self.dockWidget.setSizePolicy(sizePolicy1)
+        self.dockWidget.setMinimumSize(QSize(230, 178))
+        self.dockWidget.setFeatures(QDockWidget.DockWidgetFloatable|QDockWidget.DockWidgetMovable)
+        self.dockWidget.setAllowedAreas(Qt.AllDockWidgetAreas)
+        self.dockWidgetContents = QWidget()
+        self.dockWidgetContents.setObjectName(u"dockWidgetContents")
+        sizePolicy1.setHeightForWidth(self.dockWidgetContents.sizePolicy().hasHeightForWidth())
+        self.dockWidgetContents.setSizePolicy(sizePolicy1)
+        self.verticalLayout = QVBoxLayout(self.dockWidgetContents)
         self.verticalLayout.setSpacing(0)
         self.verticalLayout.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout.setObjectName("verticalLayout")
-        self.scrollArea = QtGui.QScrollArea(self.dockWidgetContents)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
-        self.scrollArea.setSizePolicy(sizePolicy)
-        self.scrollArea.setMinimumSize(QtCore.QSize(0, 0))
-        self.scrollArea.setVerticalScrollBarPolicy(QtCore.Qt.ScrollBarAsNeeded)
+        self.verticalLayout.setObjectName(u"verticalLayout")
+        self.scrollArea = QScrollArea(self.dockWidgetContents)
+        self.scrollArea.setObjectName(u"scrollArea")
+        sizePolicy1.setHeightForWidth(self.scrollArea.sizePolicy().hasHeightForWidth())
+        self.scrollArea.setSizePolicy(sizePolicy1)
+        self.scrollArea.setMinimumSize(QSize(0, 0))
+        self.scrollArea.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
         self.scrollArea.setWidgetResizable(True)
-        self.scrollArea.setObjectName("scrollArea")
-        self.scrollAreaWidgetContents_2 = QtGui.QWidget()
-        self.scrollAreaWidgetContents_2.setGeometry(QtCore.QRect(0, 0, 250, 552))
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.scrollAreaWidgetContents_2.sizePolicy().hasHeightForWidth())
-        self.scrollAreaWidgetContents_2.setSizePolicy(sizePolicy)
-        self.scrollAreaWidgetContents_2.setObjectName("scrollAreaWidgetContents_2")
-        self.verticalLayout_2 = QtGui.QVBoxLayout(self.scrollAreaWidgetContents_2)
+        self.scrollAreaWidgetContents_2 = QWidget()
+        self.scrollAreaWidgetContents_2.setObjectName(u"scrollAreaWidgetContents_2")
+        self.scrollAreaWidgetContents_2.setGeometry(QRect(0, 0, 250, 552))
+        sizePolicy1.setHeightForWidth(self.scrollAreaWidgetContents_2.sizePolicy().hasHeightForWidth())
+        self.scrollAreaWidgetContents_2.setSizePolicy(sizePolicy1)
+        self.verticalLayout_2 = QVBoxLayout(self.scrollAreaWidgetContents_2)
         self.verticalLayout_2.setContentsMargins(0, 0, 0, 0)
-        self.verticalLayout_2.setObjectName("verticalLayout_2")
-        self.toolBox = QtGui.QToolBox(self.scrollAreaWidgetContents_2)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.toolBox.sizePolicy().hasHeightForWidth())
-        self.toolBox.setSizePolicy(sizePolicy)
-        self.toolBox.setMinimumSize(QtCore.QSize(0, 0))
-        self.toolBox.setAccessibleName("")
-        self.toolBox.setStyleSheet("QToolBox::tab {\n"
+        self.verticalLayout_2.setObjectName(u"verticalLayout_2")
+        self.toolBox = QToolBox(self.scrollAreaWidgetContents_2)
+        self.toolBox.setObjectName(u"toolBox")
+        sizePolicy1.setHeightForWidth(self.toolBox.sizePolicy().hasHeightForWidth())
+        self.toolBox.setSizePolicy(sizePolicy1)
+        self.toolBox.setMinimumSize(QSize(0, 0))
+        self.toolBox.setStyleSheet(u"QToolBox::tab {\n"
 "         background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,\n"
 "                                     stop: 0 #E1E1E1, stop: 0.4 #DDDDDD,\n"
 "                                     stop: 0.5 #D8D8D8, stop: 1.0 #D3D3D3);\n"
@@ -87,256 +85,331 @@ class Ui_SimpleVizWidget(object):
 "QToolBox {\n"
 "    padding : 0\n"
 "}")
-        self.toolBox.setFrameShape(QtGui.QFrame.NoFrame)
-        self.toolBox.setFrameShadow(QtGui.QFrame.Plain)
-        self.toolBox.setObjectName("toolBox")
-        self.graphics = QtGui.QWidget()
-        self.graphics.setGeometry(QtCore.QRect(0, 0, 250, 396))
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.graphics.sizePolicy().hasHeightForWidth())
-        self.graphics.setSizePolicy(sizePolicy)
-        self.graphics.setObjectName("graphics")
-        self.verticalLayout_3 = QtGui.QVBoxLayout(self.graphics)
+        self.toolBox.setFrameShape(QFrame.NoFrame)
+        self.toolBox.setFrameShadow(QFrame.Plain)
+        self.graphics = QWidget()
+        self.graphics.setObjectName(u"graphics")
+        self.graphics.setGeometry(QRect(0, 0, 250, 396))
+        sizePolicy1.setHeightForWidth(self.graphics.sizePolicy().hasHeightForWidth())
+        self.graphics.setSizePolicy(sizePolicy1)
+        self.verticalLayout_3 = QVBoxLayout(self.graphics)
         self.verticalLayout_3.setSpacing(3)
         self.verticalLayout_3.setContentsMargins(3, 3, 3, 3)
-        self.verticalLayout_3.setObjectName("verticalLayout_3")
-        self.region_widget = QtGui.QWidget(self.graphics)
-        self.region_widget.setObjectName("region_widget")
-        self.formLayout_5 = QtGui.QFormLayout(self.region_widget)
+        self.verticalLayout_3.setObjectName(u"verticalLayout_3")
+        self.region_widget = QWidget(self.graphics)
+        self.region_widget.setObjectName(u"region_widget")
+        self.formLayout_5 = QFormLayout(self.region_widget)
         self.formLayout_5.setContentsMargins(3, 3, 3, 3)
-        self.formLayout_5.setContentsMargins(0, 0, 0, 0)
-        self.formLayout_5.setSpacing(3)
-        self.formLayout_5.setObjectName("formLayout_5")
-        self.region_label = QtGui.QLabel(self.region_widget)
-        self.region_label.setObjectName("region_label")
-        self.formLayout_5.setWidget(0, QtGui.QFormLayout.LabelRole, self.region_label)
+        self.formLayout_5.setObjectName(u"formLayout_5")
+        self.formLayout_5.setHorizontalSpacing(3)
+        self.formLayout_5.setVerticalSpacing(3)
+        self.region_label = QLabel(self.region_widget)
+        self.region_label.setObjectName(u"region_label")
+
+        self.formLayout_5.setWidget(0, QFormLayout.LabelRole, self.region_label)
+
         self.region_chooser = RegionChooserWidget(self.region_widget)
-        self.region_chooser.setObjectName("region_chooser")
-        self.formLayout_5.setWidget(0, QtGui.QFormLayout.FieldRole, self.region_chooser)
+        self.region_chooser.setObjectName(u"region_chooser")
+
+        self.formLayout_5.setWidget(0, QFormLayout.FieldRole, self.region_chooser)
+
+
         self.verticalLayout_3.addWidget(self.region_widget)
+
         self.scene_editor = SceneEditorWidget(self.graphics)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.scene_editor.sizePolicy().hasHeightForWidth())
-        self.scene_editor.setSizePolicy(sizePolicy)
-        self.scene_editor.setObjectName("scene_editor")
+        self.scene_editor.setObjectName(u"scene_editor")
+        sizePolicy1.setHeightForWidth(self.scene_editor.sizePolicy().hasHeightForWidth())
+        self.scene_editor.setSizePolicy(sizePolicy1)
+
         self.verticalLayout_3.addWidget(self.scene_editor)
-        self.toolBox.addItem(self.graphics, "")
-        self.view = QtGui.QWidget()
-        self.view.setGeometry(QtCore.QRect(0, 0, 250, 396))
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Expanding)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.view.sizePolicy().hasHeightForWidth())
-        self.view.setSizePolicy(sizePolicy)
-        self.view.setObjectName("view")
-        self.verticalLayout_5 = QtGui.QVBoxLayout(self.view)
+
+        self.toolBox.addItem(self.graphics, u"Graphics")
+        self.view = QWidget()
+        self.view.setObjectName(u"view")
+        self.view.setGeometry(QRect(0, 0, 250, 396))
+        sizePolicy1.setHeightForWidth(self.view.sizePolicy().hasHeightForWidth())
+        self.view.setSizePolicy(sizePolicy1)
+        self.verticalLayout_5 = QVBoxLayout(self.view)
         self.verticalLayout_5.setSpacing(3)
         self.verticalLayout_5.setContentsMargins(3, 3, 3, 3)
-        self.verticalLayout_5.setObjectName("verticalLayout_5")
+        self.verticalLayout_5.setObjectName(u"verticalLayout_5")
         self.sceneviewer_editor_widget = SceneviewerEditorWidget(self.view)
-        self.sceneviewer_editor_widget.setObjectName("sceneviewer_editor_widget")
+        self.sceneviewer_editor_widget.setObjectName(u"sceneviewer_editor_widget")
+
         self.verticalLayout_5.addWidget(self.sceneviewer_editor_widget)
-        self.toolBox.addItem(self.view, "")
-        self.time = QtGui.QWidget()
-        self.time.setGeometry(QtCore.QRect(0, 0, 250, 396))
-        self.time.setObjectName("time")
-        self.verticalLayout_8 = QtGui.QVBoxLayout(self.time)
-        self.verticalLayout_8.setObjectName("verticalLayout_8")
-        self.time_autorange_button = QtGui.QPushButton(self.time)
-        self.time_autorange_button.setObjectName("time_autorange_button")
+
+        self.toolBox.addItem(self.view, u"View")
+        self.time = QWidget()
+        self.time.setObjectName(u"time")
+        self.time.setGeometry(QRect(0, 0, 250, 396))
+        self.verticalLayout_8 = QVBoxLayout(self.time)
+        self.verticalLayout_8.setObjectName(u"verticalLayout_8")
+        self.time_autorange_button = QPushButton(self.time)
+        self.time_autorange_button.setObjectName(u"time_autorange_button")
+
         self.verticalLayout_8.addWidget(self.time_autorange_button)
-        self.frame_2 = QtGui.QFrame(self.time)
-        self.frame_2.setFrameShape(QtGui.QFrame.StyledPanel)
-        self.frame_2.setFrameShadow(QtGui.QFrame.Raised)
-        self.frame_2.setObjectName("frame_2")
-        self.formLayout_4 = QtGui.QFormLayout(self.frame_2)
-        self.formLayout_4.setObjectName("formLayout_4")
-        self.time_minimum_label = QtGui.QLabel(self.frame_2)
-        self.time_minimum_label.setObjectName("time_minimum_label")
-        self.formLayout_4.setWidget(0, QtGui.QFormLayout.LabelRole, self.time_minimum_label)
-        self.time_minimum_lineedit = QtGui.QLineEdit(self.frame_2)
-        self.time_minimum_lineedit.setObjectName("time_minimum_lineedit")
-        self.formLayout_4.setWidget(0, QtGui.QFormLayout.FieldRole, self.time_minimum_lineedit)
-        self.time_maximum_label = QtGui.QLabel(self.frame_2)
-        self.time_maximum_label.setObjectName("time_maximum_label")
-        self.formLayout_4.setWidget(1, QtGui.QFormLayout.LabelRole, self.time_maximum_label)
-        self.time_maximum_lineedit = QtGui.QLineEdit(self.frame_2)
-        self.time_maximum_lineedit.setObjectName("time_maximum_lineedit")
-        self.formLayout_4.setWidget(1, QtGui.QFormLayout.FieldRole, self.time_maximum_lineedit)
-        self.time_lineedit = QtGui.QLineEdit(self.frame_2)
-        self.time_lineedit.setObjectName("time_lineedit")
-        self.formLayout_4.setWidget(2, QtGui.QFormLayout.FieldRole, self.time_lineedit)
-        self.time_label = QtGui.QLabel(self.frame_2)
-        self.time_label.setObjectName("time_label")
-        self.formLayout_4.setWidget(2, QtGui.QFormLayout.LabelRole, self.time_label)
+
+        self.frame_2 = QFrame(self.time)
+        self.frame_2.setObjectName(u"frame_2")
+        self.frame_2.setFrameShape(QFrame.StyledPanel)
+        self.frame_2.setFrameShadow(QFrame.Raised)
+        self.formLayout_4 = QFormLayout(self.frame_2)
+        self.formLayout_4.setObjectName(u"formLayout_4")
+        self.time_minimum_label = QLabel(self.frame_2)
+        self.time_minimum_label.setObjectName(u"time_minimum_label")
+
+        self.formLayout_4.setWidget(0, QFormLayout.LabelRole, self.time_minimum_label)
+
+        self.time_minimum_lineedit = QLineEdit(self.frame_2)
+        self.time_minimum_lineedit.setObjectName(u"time_minimum_lineedit")
+
+        self.formLayout_4.setWidget(0, QFormLayout.FieldRole, self.time_minimum_lineedit)
+
+        self.time_maximum_label = QLabel(self.frame_2)
+        self.time_maximum_label.setObjectName(u"time_maximum_label")
+
+        self.formLayout_4.setWidget(1, QFormLayout.LabelRole, self.time_maximum_label)
+
+        self.time_maximum_lineedit = QLineEdit(self.frame_2)
+        self.time_maximum_lineedit.setObjectName(u"time_maximum_lineedit")
+
+        self.formLayout_4.setWidget(1, QFormLayout.FieldRole, self.time_maximum_lineedit)
+
+        self.time_lineedit = QLineEdit(self.frame_2)
+        self.time_lineedit.setObjectName(u"time_lineedit")
+
+        self.formLayout_4.setWidget(2, QFormLayout.FieldRole, self.time_lineedit)
+
+        self.time_label = QLabel(self.frame_2)
+        self.time_label.setObjectName(u"time_label")
+
+        self.formLayout_4.setWidget(2, QFormLayout.LabelRole, self.time_label)
+
+
         self.verticalLayout_8.addWidget(self.frame_2)
-        self.time_slider = QtGui.QSlider(self.time)
+
+        self.time_slider = QSlider(self.time)
+        self.time_slider.setObjectName(u"time_slider")
         self.time_slider.setMaximum(10000)
         self.time_slider.setSingleStep(10)
         self.time_slider.setPageStep(100)
-        self.time_slider.setOrientation(QtCore.Qt.Horizontal)
-        self.time_slider.setObjectName("time_slider")
+        self.time_slider.setOrientation(Qt.Horizontal)
+
         self.verticalLayout_8.addWidget(self.time_slider)
-        spacerItem = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.verticalLayout_8.addItem(spacerItem)
-        self.toolBox.addItem(self.time, "")
-        self.rendering = QtGui.QWidget()
-        self.rendering.setGeometry(QtCore.QRect(0, 0, 250, 396))
-        self.rendering.setObjectName("rendering")
-        self.verticalLayout_7 = QtGui.QVBoxLayout(self.rendering)
-        self.verticalLayout_7.setObjectName("verticalLayout_7")
-        self.tessellation_groupbox = QtGui.QGroupBox(self.rendering)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Preferred, QtGui.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
+
+        self.verticalSpacer_5 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_8.addItem(self.verticalSpacer_5)
+
+        self.toolBox.addItem(self.time, u"Time")
+        self.rendering = QWidget()
+        self.rendering.setObjectName(u"rendering")
+        self.rendering.setGeometry(QRect(0, 0, 250, 396))
+        self.verticalLayout_7 = QVBoxLayout(self.rendering)
+        self.verticalLayout_7.setObjectName(u"verticalLayout_7")
+        self.tessellation_groupbox = QGroupBox(self.rendering)
+        self.tessellation_groupbox.setObjectName(u"tessellation_groupbox")
         sizePolicy.setHeightForWidth(self.tessellation_groupbox.sizePolicy().hasHeightForWidth())
         self.tessellation_groupbox.setSizePolicy(sizePolicy)
-        self.tessellation_groupbox.setObjectName("tessellation_groupbox")
-        self.formLayout_2 = QtGui.QFormLayout(self.tessellation_groupbox)
-        self.formLayout_2.setObjectName("formLayout_2")
-        self.tessellation_minimum_divisions_label = QtGui.QLabel(self.tessellation_groupbox)
-        self.tessellation_minimum_divisions_label.setObjectName("tessellation_minimum_divisions_label")
-        self.formLayout_2.setWidget(1, QtGui.QFormLayout.LabelRole, self.tessellation_minimum_divisions_label)
-        self.tessellation_minimum_divisions_lineedit = QtGui.QLineEdit(self.tessellation_groupbox)
-        self.tessellation_minimum_divisions_lineedit.setObjectName("tessellation_minimum_divisions_lineedit")
-        self.formLayout_2.setWidget(1, QtGui.QFormLayout.FieldRole, self.tessellation_minimum_divisions_lineedit)
-        self.tessellation_refinement_factors_label = QtGui.QLabel(self.tessellation_groupbox)
-        self.tessellation_refinement_factors_label.setObjectName("tessellation_refinement_factors_label")
-        self.formLayout_2.setWidget(2, QtGui.QFormLayout.LabelRole, self.tessellation_refinement_factors_label)
-        self.tessellation_refinement_factors_lineedit = QtGui.QLineEdit(self.tessellation_groupbox)
-        self.tessellation_refinement_factors_lineedit.setObjectName("tessellation_refinement_factors_lineedit")
-        self.formLayout_2.setWidget(2, QtGui.QFormLayout.FieldRole, self.tessellation_refinement_factors_lineedit)
-        self.tessellation_circle_divisions_label = QtGui.QLabel(self.tessellation_groupbox)
-        self.tessellation_circle_divisions_label.setObjectName("tessellation_circle_divisions_label")
-        self.formLayout_2.setWidget(3, QtGui.QFormLayout.LabelRole, self.tessellation_circle_divisions_label)
-        self.tessellation_circle_divisions_lineedit = QtGui.QLineEdit(self.tessellation_groupbox)
-        self.tessellation_circle_divisions_lineedit.setObjectName("tessellation_circle_divisions_lineedit")
-        self.formLayout_2.setWidget(3, QtGui.QFormLayout.FieldRole, self.tessellation_circle_divisions_lineedit)
+        self.formLayout_2 = QFormLayout(self.tessellation_groupbox)
+        self.formLayout_2.setObjectName(u"formLayout_2")
+        self.tessellation_minimum_divisions_label = QLabel(self.tessellation_groupbox)
+        self.tessellation_minimum_divisions_label.setObjectName(u"tessellation_minimum_divisions_label")
+
+        self.formLayout_2.setWidget(1, QFormLayout.LabelRole, self.tessellation_minimum_divisions_label)
+
+        self.tessellation_minimum_divisions_lineedit = QLineEdit(self.tessellation_groupbox)
+        self.tessellation_minimum_divisions_lineedit.setObjectName(u"tessellation_minimum_divisions_lineedit")
+
+        self.formLayout_2.setWidget(1, QFormLayout.FieldRole, self.tessellation_minimum_divisions_lineedit)
+
+        self.tessellation_refinement_factors_label = QLabel(self.tessellation_groupbox)
+        self.tessellation_refinement_factors_label.setObjectName(u"tessellation_refinement_factors_label")
+
+        self.formLayout_2.setWidget(2, QFormLayout.LabelRole, self.tessellation_refinement_factors_label)
+
+        self.tessellation_refinement_factors_lineedit = QLineEdit(self.tessellation_groupbox)
+        self.tessellation_refinement_factors_lineedit.setObjectName(u"tessellation_refinement_factors_lineedit")
+
+        self.formLayout_2.setWidget(2, QFormLayout.FieldRole, self.tessellation_refinement_factors_lineedit)
+
+        self.tessellation_circle_divisions_label = QLabel(self.tessellation_groupbox)
+        self.tessellation_circle_divisions_label.setObjectName(u"tessellation_circle_divisions_label")
+
+        self.formLayout_2.setWidget(3, QFormLayout.LabelRole, self.tessellation_circle_divisions_label)
+
+        self.tessellation_circle_divisions_lineedit = QLineEdit(self.tessellation_groupbox)
+        self.tessellation_circle_divisions_lineedit.setObjectName(u"tessellation_circle_divisions_lineedit")
+
+        self.formLayout_2.setWidget(3, QFormLayout.FieldRole, self.tessellation_circle_divisions_lineedit)
+
+
         self.verticalLayout_7.addWidget(self.tessellation_groupbox)
-        self.perturb_lines_checkbox = QtGui.QCheckBox(self.rendering)
-        self.perturb_lines_checkbox.setObjectName("perturb_lines_checkbox")
+
+        self.perturb_lines_checkbox = QCheckBox(self.rendering)
+        self.perturb_lines_checkbox.setObjectName(u"perturb_lines_checkbox")
+
         self.verticalLayout_7.addWidget(self.perturb_lines_checkbox)
-        spacerItem1 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.verticalLayout_7.addItem(spacerItem1)
-        self.toolBox.addItem(self.rendering, "")
-        self.data_colouring = QtGui.QWidget()
-        self.data_colouring.setGeometry(QtCore.QRect(0, 0, 250, 396))
-        self.data_colouring.setObjectName("data_colouring")
-        self.verticalLayout_6 = QtGui.QVBoxLayout(self.data_colouring)
-        self.verticalLayout_6.setObjectName("verticalLayout_6")
-        self.spectrum_autorange_button = QtGui.QPushButton(self.data_colouring)
-        self.spectrum_autorange_button.setObjectName("spectrum_autorange_button")
+
+        self.verticalSpacer_3 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_7.addItem(self.verticalSpacer_3)
+
+        self.toolBox.addItem(self.rendering, u"Rendering")
+        self.data_colouring = QWidget()
+        self.data_colouring.setObjectName(u"data_colouring")
+        self.data_colouring.setGeometry(QRect(0, 0, 250, 396))
+        self.verticalLayout_6 = QVBoxLayout(self.data_colouring)
+        self.verticalLayout_6.setObjectName(u"verticalLayout_6")
+        self.spectrum_autorange_button = QPushButton(self.data_colouring)
+        self.spectrum_autorange_button.setObjectName(u"spectrum_autorange_button")
+
         self.verticalLayout_6.addWidget(self.spectrum_autorange_button)
-        self.frame_3 = QtGui.QFrame(self.data_colouring)
-        self.frame_3.setFrameShape(QtGui.QFrame.StyledPanel)
-        self.frame_3.setFrameShadow(QtGui.QFrame.Raised)
-        self.frame_3.setObjectName("frame_3")
-        self.formLayout_3 = QtGui.QFormLayout(self.frame_3)
-        self.formLayout_3.setObjectName("formLayout_3")
-        self.spectrum_minimum_label = QtGui.QLabel(self.frame_3)
-        self.spectrum_minimum_label.setObjectName("spectrum_minimum_label")
-        self.formLayout_3.setWidget(0, QtGui.QFormLayout.LabelRole, self.spectrum_minimum_label)
-        self.spectrum_minimum_lineedit = QtGui.QLineEdit(self.frame_3)
-        self.spectrum_minimum_lineedit.setObjectName("spectrum_minimum_lineedit")
-        self.formLayout_3.setWidget(0, QtGui.QFormLayout.FieldRole, self.spectrum_minimum_lineedit)
-        self.spectrum_maximum_lineedit = QtGui.QLineEdit(self.frame_3)
-        self.spectrum_maximum_lineedit.setObjectName("spectrum_maximum_lineedit")
-        self.formLayout_3.setWidget(2, QtGui.QFormLayout.FieldRole, self.spectrum_maximum_lineedit)
-        self.spectrum_maximum_label = QtGui.QLabel(self.frame_3)
-        self.spectrum_maximum_label.setObjectName("spectrum_maximum_label")
-        self.formLayout_3.setWidget(2, QtGui.QFormLayout.LabelRole, self.spectrum_maximum_label)
+
+        self.frame_3 = QFrame(self.data_colouring)
+        self.frame_3.setObjectName(u"frame_3")
+        self.frame_3.setFrameShape(QFrame.StyledPanel)
+        self.frame_3.setFrameShadow(QFrame.Raised)
+        self.formLayout_3 = QFormLayout(self.frame_3)
+        self.formLayout_3.setObjectName(u"formLayout_3")
+        self.spectrum_minimum_label = QLabel(self.frame_3)
+        self.spectrum_minimum_label.setObjectName(u"spectrum_minimum_label")
+
+        self.formLayout_3.setWidget(0, QFormLayout.LabelRole, self.spectrum_minimum_label)
+
+        self.spectrum_minimum_lineedit = QLineEdit(self.frame_3)
+        self.spectrum_minimum_lineedit.setObjectName(u"spectrum_minimum_lineedit")
+
+        self.formLayout_3.setWidget(0, QFormLayout.FieldRole, self.spectrum_minimum_lineedit)
+
+        self.spectrum_maximum_lineedit = QLineEdit(self.frame_3)
+        self.spectrum_maximum_lineedit.setObjectName(u"spectrum_maximum_lineedit")
+
+        self.formLayout_3.setWidget(2, QFormLayout.FieldRole, self.spectrum_maximum_lineedit)
+
+        self.spectrum_maximum_label = QLabel(self.frame_3)
+        self.spectrum_maximum_label.setObjectName(u"spectrum_maximum_label")
+
+        self.formLayout_3.setWidget(2, QFormLayout.LabelRole, self.spectrum_maximum_label)
+
+
         self.verticalLayout_6.addWidget(self.frame_3)
-        self.spectrum_add_colour_bar_button = QtGui.QPushButton(self.data_colouring)
-        self.spectrum_add_colour_bar_button.setObjectName("spectrum_add_colour_bar_button")
+
+        self.spectrum_add_colour_bar_button = QPushButton(self.data_colouring)
+        self.spectrum_add_colour_bar_button.setObjectName(u"spectrum_add_colour_bar_button")
+
         self.verticalLayout_6.addWidget(self.spectrum_add_colour_bar_button)
-        spacerItem2 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.verticalLayout_6.addItem(spacerItem2)
-        self.toolBox.addItem(self.data_colouring, "")
-        self.output = QtGui.QWidget()
-        self.output.setGeometry(QtCore.QRect(0, 0, 250, 396))
-        self.output.setObjectName("output")
-        self.verticalLayout_9 = QtGui.QVBoxLayout(self.output)
-        self.verticalLayout_9.setObjectName("verticalLayout_9")
-        self.save_image_button = QtGui.QPushButton(self.output)
-        self.save_image_button.setObjectName("save_image_button")
+
+        self.verticalSpacer_4 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_6.addItem(self.verticalSpacer_4)
+
+        self.toolBox.addItem(self.data_colouring, u"Data Colouring")
+        self.output = QWidget()
+        self.output.setObjectName(u"output")
+        self.output.setGeometry(QRect(0, 0, 250, 396))
+        self.verticalLayout_9 = QVBoxLayout(self.output)
+        self.verticalLayout_9.setObjectName(u"verticalLayout_9")
+        self.save_image_button = QPushButton(self.output)
+        self.save_image_button.setObjectName(u"save_image_button")
+
         self.verticalLayout_9.addWidget(self.save_image_button)
-        self.save_webgl_button = QtGui.QPushButton(self.output)
-        self.save_webgl_button.setObjectName("save_webgl_button")
+
+        self.save_webgl_button = QPushButton(self.output)
+        self.save_webgl_button.setObjectName(u"save_webgl_button")
+
         self.verticalLayout_9.addWidget(self.save_webgl_button)
-        spacerItem3 = QtGui.QSpacerItem(20, 40, QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Expanding)
-        self.verticalLayout_9.addItem(spacerItem3)
-        self.toolBox.addItem(self.output, "")
+
+        self.verticalSpacer_6 = QSpacerItem(20, 40, QSizePolicy.Minimum, QSizePolicy.Expanding)
+
+        self.verticalLayout_9.addItem(self.verticalSpacer_6)
+
+        self.toolBox.addItem(self.output, u"Output")
+
         self.verticalLayout_2.addWidget(self.toolBox)
+
         self.scrollArea.setWidget(self.scrollAreaWidgetContents_2)
+
         self.verticalLayout.addWidget(self.scrollArea)
-        self.frame = QtGui.QFrame(self.dockWidgetContents)
-        self.frame.setFrameShape(QtGui.QFrame.StyledPanel)
-        self.frame.setFrameShadow(QtGui.QFrame.Raised)
-        self.frame.setObjectName("frame")
-        self.horizontalLayout_2 = QtGui.QHBoxLayout(self.frame)
+
+        self.frame = QFrame(self.dockWidgetContents)
+        self.frame.setObjectName(u"frame")
+        self.frame.setFrameShape(QFrame.StyledPanel)
+        self.frame.setFrameShadow(QFrame.Raised)
+        self.horizontalLayout_2 = QHBoxLayout(self.frame)
         self.horizontalLayout_2.setContentsMargins(3, 3, 3, 3)
-        self.horizontalLayout_2.setObjectName("horizontalLayout_2")
-        self.view_all_button = QtGui.QPushButton(self.frame)
-        self.view_all_button.setObjectName("view_all_button")
+        self.horizontalLayout_2.setObjectName(u"horizontalLayout_2")
+        self.view_all_button = QPushButton(self.frame)
+        self.view_all_button.setObjectName(u"view_all_button")
+
         self.horizontalLayout_2.addWidget(self.view_all_button)
-        self.done_button = QtGui.QPushButton(self.frame)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Minimum, QtGui.QSizePolicy.Fixed)
-        sizePolicy.setHorizontalStretch(0)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.done_button.sizePolicy().hasHeightForWidth())
-        self.done_button.setSizePolicy(sizePolicy)
-        self.done_button.setObjectName("done_button")
+
+        self.done_button = QPushButton(self.frame)
+        self.done_button.setObjectName(u"done_button")
+        sizePolicy2 = QSizePolicy(QSizePolicy.Minimum, QSizePolicy.Fixed)
+        sizePolicy2.setHorizontalStretch(0)
+        sizePolicy2.setVerticalStretch(0)
+        sizePolicy2.setHeightForWidth(self.done_button.sizePolicy().hasHeightForWidth())
+        self.done_button.setSizePolicy(sizePolicy2)
+
         self.horizontalLayout_2.addWidget(self.done_button)
+
+
         self.verticalLayout.addWidget(self.frame)
+
         self.dockWidget.setWidget(self.dockWidgetContents)
+
         self.horizontalLayout.addWidget(self.dockWidget)
+
         self.sceneviewer_widget = SceneviewerWidget(SimpleVizWidget)
-        sizePolicy = QtGui.QSizePolicy(QtGui.QSizePolicy.Expanding, QtGui.QSizePolicy.Preferred)
-        sizePolicy.setHorizontalStretch(1)
-        sizePolicy.setVerticalStretch(0)
-        sizePolicy.setHeightForWidth(self.sceneviewer_widget.sizePolicy().hasHeightForWidth())
-        self.sceneviewer_widget.setSizePolicy(sizePolicy)
-        self.sceneviewer_widget.setObjectName("sceneviewer_widget")
+        self.sceneviewer_widget.setObjectName(u"sceneviewer_widget")
+        sizePolicy3 = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy3.setHorizontalStretch(1)
+        sizePolicy3.setVerticalStretch(0)
+        sizePolicy3.setHeightForWidth(self.sceneviewer_widget.sizePolicy().hasHeightForWidth())
+        self.sceneviewer_widget.setSizePolicy(sizePolicy3)
+
         self.horizontalLayout.addWidget(self.sceneviewer_widget)
 
+
         self.retranslateUi(SimpleVizWidget)
+
         self.toolBox.setCurrentIndex(5)
         self.toolBox.layout().setSpacing(2)
-        QtCore.QMetaObject.connectSlotsByName(SimpleVizWidget)
+
+
+        QMetaObject.connectSlotsByName(SimpleVizWidget)
+    # setupUi
 
     def retranslateUi(self, SimpleVizWidget):
-        SimpleVizWidget.setWindowTitle(QtGui.QApplication.translate("SimpleVizWidget", "Form", None, QtGui.QApplication.UnicodeUTF8))
-        self.dockWidget.setWindowTitle(QtGui.QApplication.translate("SimpleVizWidget", "SimpleViz Tools", None, QtGui.QApplication.UnicodeUTF8))
-        self.region_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Region:", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.graphics), QtGui.QApplication.translate("SimpleVizWidget", "Graphics", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.view), QtGui.QApplication.translate("SimpleVizWidget", "View", None, QtGui.QApplication.UnicodeUTF8))
-        self.time_autorange_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "Autorange time", None, QtGui.QApplication.UnicodeUTF8))
-        self.time_minimum_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Minimum:", None, QtGui.QApplication.UnicodeUTF8))
-        self.time_maximum_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Maximum:", None, QtGui.QApplication.UnicodeUTF8))
-        self.time_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Time:", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.time), QtGui.QApplication.translate("SimpleVizWidget", "Time", None, QtGui.QApplication.UnicodeUTF8))
-        self.tessellation_groupbox.setTitle(QtGui.QApplication.translate("SimpleVizWidget", "Tessellation divisions:", None, QtGui.QApplication.UnicodeUTF8))
-        self.tessellation_minimum_divisions_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Minimum:", None, QtGui.QApplication.UnicodeUTF8))
-        self.tessellation_refinement_factors_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Refinement:", None, QtGui.QApplication.UnicodeUTF8))
-        self.tessellation_circle_divisions_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Circle:", None, QtGui.QApplication.UnicodeUTF8))
-        self.perturb_lines_checkbox.setText(QtGui.QApplication.translate("SimpleVizWidget", "Perturb lines", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.rendering), QtGui.QApplication.translate("SimpleVizWidget", "Rendering", None, QtGui.QApplication.UnicodeUTF8))
-        self.spectrum_autorange_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "Autorange spectrum", None, QtGui.QApplication.UnicodeUTF8))
-        self.spectrum_minimum_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Minimum:", None, QtGui.QApplication.UnicodeUTF8))
-        self.spectrum_maximum_label.setText(QtGui.QApplication.translate("SimpleVizWidget", "Maximum:", None, QtGui.QApplication.UnicodeUTF8))
-        self.spectrum_add_colour_bar_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "Add colour bar", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.data_colouring), QtGui.QApplication.translate("SimpleVizWidget", "Data Colouring", None, QtGui.QApplication.UnicodeUTF8))
-        self.save_image_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "Save image...", None, QtGui.QApplication.UnicodeUTF8))
-        self.save_webgl_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "Save WebGL...", None, QtGui.QApplication.UnicodeUTF8))
-        self.toolBox.setItemText(self.toolBox.indexOf(self.output), QtGui.QApplication.translate("SimpleVizWidget", "Output", None, QtGui.QApplication.UnicodeUTF8))
-        self.view_all_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "View All", None, QtGui.QApplication.UnicodeUTF8))
-        self.done_button.setText(QtGui.QApplication.translate("SimpleVizWidget", "Done", None, QtGui.QApplication.UnicodeUTF8))
+        SimpleVizWidget.setWindowTitle(QCoreApplication.translate("SimpleVizWidget", u"Form", None))
+        self.dockWidget.setWindowTitle(QCoreApplication.translate("SimpleVizWidget", u"SimpleViz Tools", None))
+#if QT_CONFIG(accessibility)
+        self.toolBox.setAccessibleName("")
+#endif // QT_CONFIG(accessibility)
+        self.region_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Region:", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.graphics), QCoreApplication.translate("SimpleVizWidget", u"Graphics", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.view), QCoreApplication.translate("SimpleVizWidget", u"View", None))
+        self.time_autorange_button.setText(QCoreApplication.translate("SimpleVizWidget", u"Autorange time", None))
+        self.time_minimum_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Minimum:", None))
+        self.time_maximum_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Maximum:", None))
+        self.time_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Time:", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.time), QCoreApplication.translate("SimpleVizWidget", u"Time", None))
+        self.tessellation_groupbox.setTitle(QCoreApplication.translate("SimpleVizWidget", u"Tessellation divisions:", None))
+        self.tessellation_minimum_divisions_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Minimum:", None))
+        self.tessellation_refinement_factors_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Refinement:", None))
+        self.tessellation_circle_divisions_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Circle:", None))
+        self.perturb_lines_checkbox.setText(QCoreApplication.translate("SimpleVizWidget", u"Perturb lines", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.rendering), QCoreApplication.translate("SimpleVizWidget", u"Rendering", None))
+        self.spectrum_autorange_button.setText(QCoreApplication.translate("SimpleVizWidget", u"Autorange spectrum", None))
+        self.spectrum_minimum_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Minimum:", None))
+        self.spectrum_maximum_label.setText(QCoreApplication.translate("SimpleVizWidget", u"Maximum:", None))
+        self.spectrum_add_colour_bar_button.setText(QCoreApplication.translate("SimpleVizWidget", u"Add colour bar", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.data_colouring), QCoreApplication.translate("SimpleVizWidget", u"Data Colouring", None))
+        self.save_image_button.setText(QCoreApplication.translate("SimpleVizWidget", u"Save image...", None))
+        self.save_webgl_button.setText(QCoreApplication.translate("SimpleVizWidget", u"Save WebGL...", None))
+        self.toolBox.setItemText(self.toolBox.indexOf(self.output), QCoreApplication.translate("SimpleVizWidget", u"Output", None))
+        self.view_all_button.setText(QCoreApplication.translate("SimpleVizWidget", u"View All", None))
+        self.done_button.setText(QCoreApplication.translate("SimpleVizWidget", u"Done", None))
+    # retranslateUi
 
-from opencmiss.zincwidgets.sceneviewerwidget import SceneviewerWidget
-from opencmiss.zincwidgets.regionchooserwidget import RegionChooserWidget
-from opencmiss.zincwidgets.sceneviewereditorwidget import SceneviewerEditorWidget
-from opencmiss.zincwidgets.sceneeditorwidget import SceneEditorWidget
